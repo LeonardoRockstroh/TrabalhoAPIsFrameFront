@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from '../produto';
+import { ProdutoApiService } from '../produto-api.service';
 import { ProdutoService } from '../produto.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class FormProdutosComponent implements OnInit {
   botaoAcao = "Cadastrar";
 
   constructor(
-    private produtoService: ProdutoService,
+    private produtoApiService: ProdutoApiService,
     private route: ActivatedRoute,
     private router: Router  
   ) { }
@@ -26,8 +27,8 @@ export class FormProdutosComponent implements OnInit {
     console.log("ID", this.id);
     if(this.id) {
       this.botaoAcao= "Editar";      
-      this.produto = Object.assign({}, 
-        this.produtoService.buscarPorId(this.id));
+      //this.produto = Object.assign({}, 
+      //  this.produtoApiService.buscarPorId(this.id));
       console.log("Produto", this.produto);
     }
   }
@@ -38,12 +39,15 @@ export class FormProdutosComponent implements OnInit {
 
   salvar() {
     if(this.estaInserindo()) {
-      this.produtoService.inserir(this.produto);
-      this.mensagem = this.produto.nome + " cadastrado com sucesso!";
-      this.produto = new Produto();
+      this.produtoApiService.inserir(this.produto).subscribe(produto => {
+        console.log("Produto Cadastrado", produto);
+        this.mensagem = this.produto.nome + " cadastrado com sucesso!";
+        this.produto = new Produto();
+      });
+
     }
     else {
-      this.produtoService.editar(this.id, this.produto);
+      this.produtoApiService.editar(this.id, this.produto);
       this.mensagem = this.produto.nome + " editado com sucesso!";
 
     }

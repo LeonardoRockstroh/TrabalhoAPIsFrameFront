@@ -6,10 +6,10 @@ import { Produto } from './produto';
 })
 export class ProdutoService {
   listaProdutos: Produto[] = [
-    {id:1, nome:"Produto 1", preco: 20},
-    {id:2, nome:"Produto 2", preco: 30},
-    {id:3, nome:"Produto 3", preco: 40},
-    {id:4, nome:"Produto 4", preco: 50},
+    {_id:1, nome:"Produto 1", preco: 20},
+    {_id:2, nome:"Produto 2", preco: 30},
+    {_id:3, nome:"Produto 3", preco: 40},
+    {_id:4, nome:"Produto 4", preco: 50},
   ];
 
   constructor() { }
@@ -23,7 +23,7 @@ export class ProdutoService {
   }
 
   buscarPorId(id:number): Produto{
-    const produto = this.listaProdutos.find(produto => produto.id === id);
+    const produto = this.listaProdutos.find(produto => produto._id === id);
     return produto ?produto :new Produto();
   }
 
@@ -40,6 +40,6 @@ export class ProdutoService {
   }
 
   private getIndice(id: number) {
-    return this.listaProdutos.findIndex(produto => produto.id === id);
+    return this.listaProdutos.findIndex(produto => produto._id === id);
   }
 }

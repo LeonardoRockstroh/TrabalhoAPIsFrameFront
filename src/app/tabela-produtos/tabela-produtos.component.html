@@ -10,11 +10,11 @@
         <th>AÇÃO</th>
     </tr>
     <tr *ngFor="let prod of lista | filtroPesquisa:nomePesquisado">
-        <td>{{prod.id}}</td>
+        <td>{{prod._id}}</td>
         <td>{{prod.nome}}</td>
         <td>{{prod.preco | moeda}}</td>
-        <td><a routerLink="/edit/{{prod.id}}">Editar</a></td>
-        <td><a routerLink="/tabela" (click)="deletar(prod.id)">Deletar</a></td>
+        <td><a routerLink="/edit/{{prod._id}}">Editar</a></td>
+        <td><a routerLink="/tabela" (click)="deletar(prod._id)">Deletar</a></td>
     </tr>
 </table>
 <p *ngIf="lista.length <= 0"> NÃO HÁ PRODUTOS CADASTRADOS! </p>

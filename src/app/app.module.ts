@@ -11,7 +11,7 @@ import { MoedaPipe } from './moeda.pipe';
 import { FiltroPesquisaPipe } from './filtro-pesquisa.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { HttpClientModule } from '@angular/common/http';
 //registerLocaleData(ptBr);
 
 @NgModule({
@@ -26,7 +26,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule
   ],
   providers: [
 //    { provide: LOCALE_ID, useValue: 'pt'},

@@ -15,6 +15,7 @@ export class ProdutoService {
   constructor() { }
 
   inserir(produto: Produto) {
+    console.log('aqui 01')
     this.listaProdutos.push(produto);
   }
 

@@ -31,7 +31,9 @@ export class TabelaProdutosComponent implements OnInit {
 
 
   deletar(id: number){
-    this.servico.deletar(id);
+    this.servico.deletar(id).subscribe(res => {
+      this.listar();
+      console.log(res);
+    });
   }
-
 }

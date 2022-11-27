@@ -26,12 +26,18 @@ export class ProdutoApiService {
     return this.http.post<Produto>(this.baseAPI, produto, httpOptions);
   }
 
-  buscarPorId(id:number){
+  buscarPorId(id:number): Observable<Produto> {
+    const uri = `${this.baseAPI}/${id}`;//baseAPI + "/"+ id;
+    return this.http.get<Produto>(uri);  
   }
 
-  editar(id: number, produto: Produto) {
+  editar(id: number, produto: Produto): Observable<Produto> {
+    const uri = `${this.baseAPI}/${id}`;//baseAPI + "/"+ id;
+    return this.http.put<Produto>(uri, produto, httpOptions);    
   }
 
-  deletar(id: number) {
+  deletar(id: number){
+    const uri = `${this.baseAPI}/${id}`;//baseAPI + "/"+ id;
+    return this.http.delete(uri);
   }
 }

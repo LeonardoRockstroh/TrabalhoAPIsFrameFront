@@ -22,14 +22,17 @@ export class FormProdutosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
     this.mensagem = "";
     console.log("ID", this.id);
     if(this.id) {
       this.botaoAcao= "Editar";      
       //this.produto = Object.assign({}, 
       //  this.produtoApiService.buscarPorId(this.id));
-      console.log("Produto", this.produto);
+      this.produtoApiService.buscarPorId(this.id).subscribe(prod => {
+        this.produto = prod;  
+        console.log(this.produto);   
+      })
     }
   }
 
@@ -47,8 +50,10 @@ export class FormProdutosComponent implements OnInit {
 
     }
     else {
-      this.produtoApiService.editar(this.id, this.produto);
-      this.mensagem = this.produto.nome + " editado com sucesso!";
+      this.produtoApiService.editar(this.id, this.produto).subscribe(prod => {
+        this.mensagem = `${prod.nome} editado com sucesso!`; 
+        this.produto = prod;
+      })
 
     }
   }

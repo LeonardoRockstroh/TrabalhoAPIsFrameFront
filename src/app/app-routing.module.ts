@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { TabelaProdutosComponent } from './tabela-produtos/tabela-produtos.component';
+import { TabelasComponent } from './tabelas/tabelas.component';
 import { FormProdutosComponent } from './form-produtos/form-produtos.component';
+import { FormClienteComponent } from './form-cliente/form-cliente.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const rotas: Routes = [
-  { path: 'tabela', component: TabelaProdutosComponent },
+  { path: 'tabela', component: TabelasComponent },
   { path: 'novo', component: FormProdutosComponent },
+  { path: 'novo2', component: FormClienteComponent },
   { path: 'edit/:id', component: FormProdutosComponent},
-  { path: '', redirectTo: '/tabela', pathMatch: 'full' }, 
+  { path: '', redirectTo: '/tabela', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
 ]
 

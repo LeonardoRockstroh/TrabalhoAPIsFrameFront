@@ -16,5 +16,4 @@ export class FiltroPesquisaPipe implements PipeTransform {
         produto.nome.toLocaleLowerCase().includes(nome.toLowerCase())
     );
   }
-
 }

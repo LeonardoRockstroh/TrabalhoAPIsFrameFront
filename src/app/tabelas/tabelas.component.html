@@ -1,0 +1,43 @@
+<h3>{{titulo}}</h3>
+<label>Pesquisar id produto: </label>
+<input type="text" [(ngModel)]="nomePesquisado">
+<br />
+<table *ngIf="lista1.length > 0">
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>CLIENTE</th>
+        <th>QUANTIDADE</th>
+        <th>PREÇO</th>
+        <th>VALOR TOTAL</th>
+        <th>AÇÃO</th>
+    </tr>
+    <tr *ngFor="let prod of lista1 | filtroPesquisa:nomePesquisado">
+        <td>{{prod._id}}</td>
+        <td>{{prod.nome}}</td>
+        <td>{{prod.cliente}}</td>
+        <td>{{prod.qtd}}</td>
+        <td>{{prod.preco | moeda}}</td>
+        <td>{{prod.valor | moeda}}</td>
+        <td><a routerLink="/edit/{{prod._id}}">Editar</a></td>
+        <td><a routerLink="/tabela" (click)="deletar(prod._id)">Deletar</a></td>
+    </tr>
+</table>
+<p *ngIf="lista1.length <= 0"> NÃO HÁ PRODUTOS CADASTRADOS! </p>
+
+<br />
+
+<h3>Dados cliente</h3>
+<table *ngIf="lista2.length > 0">
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>EMAIL</th>
+    </tr>
+    <tr *ngFor="let cli of lista2">
+        <td>{{cli._id}}</td>
+        <td>{{cli.nome}}</td>
+        <td>{{cli.email}}</td>
+    </tr>
+</table>
+<p *ngIf="lista2.length <= 0"> NÃO HÁ CLIENTE CADASTRADOS! </p>

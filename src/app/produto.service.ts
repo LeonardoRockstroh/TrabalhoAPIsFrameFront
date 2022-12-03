@@ -6,16 +6,15 @@ import { Produto } from './produto';
 })
 export class ProdutoService {
   listaProdutos: Produto[] = [
-    {_id:1, nome:"Produto 1", preco: 20},
-    {_id:2, nome:"Produto 2", preco: 30},
-    {_id:3, nome:"Produto 3", preco: 40},
-    {_id:4, nome:"Produto 4", preco: 50},
+    {_id:1, nome:"Produto 1", cliente: "cli 1", qtd: 5, preco: 20, valor: 100},
+    {_id:2, nome:"Produto 2", cliente: "cli 1", qtd: 5, preco: 20, valor: 100},
+    {_id:3, nome:"Produto 3", cliente: "cli 1", qtd: 5, preco: 20, valor: 100},
+    {_id:4, nome:"Produto 4", cliente: "cli 1", qtd: 5, preco: 20, valor: 100},
   ];
 
   constructor() { }
 
   inserir(produto: Produto) {
-    console.log('aqui 01')
     this.listaProdutos.push(produto);
   }
 

@@ -1,0 +1,15 @@
+<h3>Formulário de Cliente</h3>
+
+<label for="nome">Nome:</label>
+<input [(ngModel)]="cliente.nome" id="nome">
+<br />
+
+<label for="email">Email:</label>
+<input [(ngModel)]="cliente.email" id="nome">
+<br />
+
+<button (click)="salvar()">{{botaoAcao}}</button>
+<button (click)="cancelar()">Cancelar</button>
+
+<h4>{{mensagem}}</h4>
+<br />

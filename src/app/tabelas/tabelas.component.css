@@ -1,9 +1,15 @@
 table {
     border-collapse: collapse;
-    width: 70%;
+    width: 60%;
+    margin: auto;
 }
 
 th, td {
     text-align: left;
-    padding: 8px
+    padding: 8px;
+    border: 1px solid;
+}
+
+td, a {
+    margin: 5px;
 }

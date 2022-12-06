@@ -1,23 +1,27 @@
 <h3>Formulário de Produtos</h3>
 
+<div>
 <label for="nome">Nome:</label>
 <input [(ngModel)]="produto.nome" id="nome">
 <br />
 
 <label for="cliente">Cliente:</label>
-<input [(ngModel)]="produto.cliente" id="nome">
+<input [(ngModel)]="produto.cliente" id="cliente">
 <br />
 
 <label for="qtd">Quantidade:</label>
-<input type="number" [(ngModel)]="produto.qtd" id="nome">
+<input type="number" [(ngModel)]="produto.qtd" id="quantidade">
 <br />
 
 <label for="preco">Preço:</label>
 <input type="number" [(ngModel)]="produto.preco" id="preco">
 <br />
 
+<div id="botoes">
 <button (click)="salvar()">{{botaoAcao}}</button>
 <button (click)="cancelar()">Cancelar</button>
+</div>
+</div>
 
 <h4>{{mensagem}}</h4>
 <br />

@@ -1,1 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: 	#F0F8FF;
+}
+
+h1{
+    text-align:center;
+    font-size: 50px;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+}
+
+ul{
+    display: flex;
+    width: 100%;
+    margin: 0 !important;
+    justify-content: center;
+    padding: 0;
+}
+
+li{
+    display: flex;
+    margin: 10px;
+    border: double;
+    padding: 20px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+label{
+    font-size: 16px;
+}
+
+p{
+color: #FF0000;
+}
+
+input{
+    margin-left: 10px;
+    margin-bottom: 3px;
+}
+
+button{
+    margin-top:5px;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width:750px){
+    nav{
+        margin: 0;
+    }
+    ul{
+    margin-right: 150px;
+}
+
+label{
+    margin-left: 10%;
+}
+}
+
+@media only screen and (min-width:900px) {
+ul{
+    margin-left:15% ;
+}
+
+h3{
+    text-align: center;
+}
+
+input{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#Quantidade{
+    margin-left: 10px;
+}
+
+div {
+    display: flex;
+    width: 25%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div #botoes {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+}
+ 
+button{
+    font-size: 20px;
+    margin: 5px;
+}
+}

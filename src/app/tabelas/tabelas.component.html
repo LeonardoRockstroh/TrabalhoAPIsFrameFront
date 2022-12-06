@@ -1,6 +1,8 @@
 <h3>{{titulo}}</h3>
-<label>Pesquisar id produto: </label>
-<input type="text" [(ngModel)]="nomePesquisado">
+<div id="pesquisa">
+<label>Pesquisar nome produto: </label>
+<input type="text" [(ngModel)]="nomePesquisado" id="pesq">
+</div>
 <br />
 <table *ngIf="lista1.length > 0">
     <tr>
@@ -19,8 +21,8 @@
         <td>{{prod.qtd}}</td>
         <td>{{prod.preco | moeda}}</td>
         <td>{{prod.valor | moeda}}</td>
-        <td><a routerLink="/edit/{{prod._id}}">Editar</a></td>
-        <td><a routerLink="/tabela" (click)="deletar(prod._id)">Deletar</a></td>
+        <td><a routerLink="/edit/{{prod._id}}">Editar</a>
+        <a routerLink="/tabela" (click)="deletar(prod._id)">Deletar</a></td>
     </tr>
 </table>
 <p *ngIf="lista1.length <= 0"> NÃO HÁ PRODUTOS CADASTRADOS! </p>

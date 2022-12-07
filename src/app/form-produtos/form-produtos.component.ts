@@ -47,7 +47,7 @@ export class FormProdutosComponent implements OnInit {
         this.produto = new Produto();
       });
       
-      if (!this.produto.nome) {
+      if (!this.produto.nome || !this.produto == false) {
         this.mensagem = "Falha ao inserir produto, nome, cliente, quantidade, e preço obrigatórios (Cliente deve existir)";
       }
     }
